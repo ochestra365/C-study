@@ -48,5 +48,17 @@
     <ClCompile Include="swap.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="refptr.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="refreturn.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="defpara.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Overload.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

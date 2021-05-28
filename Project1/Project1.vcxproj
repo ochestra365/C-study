@@ -143,10 +143,14 @@
     <ClCompile Include="bool.cpp" />
     <ClCompile Include="cin.cpp" />
     <ClCompile Include="cout.cpp" />
+    <ClCompile Include="defpara.cpp" />
     <ClCompile Include="newarray.cpp" />
     <ClCompile Include="newdelete.cpp" />
+    <ClCompile Include="Overload.cpp" />
     <ClCompile Include="randnum.cpp" />
     <ClCompile Include="ref1.cpp" />
+    <ClCompile Include="refptr.cpp" />
+    <ClCompile Include="refreturn.cpp" />
     <ClCompile Include="self-test-1-1.cpp" />
     <ClCompile Include="self1-2.cpp" />
     <ClCompile Include="swap.cpp" />
