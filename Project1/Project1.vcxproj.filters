@@ -15,7 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="intial.cpp">
+    <ClCompile Include="randnum.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="bool.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
