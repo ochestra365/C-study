@@ -1,10 +1,10 @@
-#include <stdio.h>
-
-int main(void) {
-	int age = 25;
-	bool isAdult = age > 19;
-	if(isAdult) {
-		puts("성인입니다.");
-	}
-	return 0;
-}
+//#include <stdio.h>
+//
+//int main(void) {
+//	int age = 25;
+//	bool isAdult = age > 19;
+//	if(isAdult) {
+//		puts("성인입니다.");
+//	}
+//	return 0;
+//}
