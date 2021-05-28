@@ -149,6 +149,7 @@
     <ClCompile Include="ref1.cpp" />
     <ClCompile Include="self-test-1-1.cpp" />
     <ClCompile Include="self1-2.cpp" />
+    <ClCompile Include="swap.cpp" />
     <ClCompile Include="tagtype.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
