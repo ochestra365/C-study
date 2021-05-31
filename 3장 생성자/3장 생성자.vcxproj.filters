@@ -15,16 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Overload.cpp">
+    <ClCompile Include="Constructor.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="함수 오버로딩 테스트.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="ptroverload.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="randfunc.cpp">
+    <ClCompile Include="ConstructOverload.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
