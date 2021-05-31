@@ -141,10 +141,13 @@
   <ItemGroup>
     <ClCompile Include="Constructor.cpp" />
     <ClCompile Include="ConstructOverload.cpp" />
+    <ClCompile Include="CopyConstructor.cpp" />
     <ClCompile Include="DefConstructor.cpp" />
     <ClCompile Include="Destructor.cpp" />
+    <ClCompile Include="HumanCopy.cpp" />
     <ClCompile Include="newHuman.cpp" />
     <ClCompile Include="NodefCon.cpp" />
+    <ClCompile Include="TimeCopy.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
