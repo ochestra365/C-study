@@ -27,5 +27,11 @@
     <ClCompile Include="선생님이 푸신 코드.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="FriendClass.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="FriendFunc.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -140,6 +140,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Carclass.cpp" />
+    <ClCompile Include="FriendClass.cpp" />
+    <ClCompile Include="FriendFunc.cpp" />
     <ClCompile Include="InfoHide.cpp" />
     <ClCompile Include="Self99page.cpp" />
     <ClCompile Include="선생님이 푸신 코드.cpp" />
