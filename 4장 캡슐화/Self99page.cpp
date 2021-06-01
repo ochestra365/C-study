@@ -22,6 +22,7 @@ public:
 	}
 	~Human() {
 		delete[] pname;
+		printf("생성자 소멸\n");
 	}
 	void intro() {
 		if ((strlen(pname) < 12) && (age > 0) && (age < 120)) {
@@ -40,15 +41,17 @@ void PrintHuman(Human who) {
 
 int main() {
 	printf("이름과 나이를 적으세요\n(단, 이름은 12자 미만, 나이는 0~120까지 입력가능\n");
-	char name[12];
-	int age;
-	printf(">이름 : ");
-	scanf("%s", name);
-	getchar();//개행 버퍼 없애줌
-	printf(">나이 : ");
-	scanf("%d", &age);
-	Human park(name, age);
-
-	PrintHuman(park);
+	while (1) {
+		char name[12];
+		int age;
+		printf(">이름 : ");
+		scanf("%s", name);
+		getchar();//개행 버퍼 없애줌
+		printf(">나이 : ");
+		scanf("%d", &age);
+		Human park(name, age);
+		PrintHuman(park);
+	}
+	
 	return 0;
 }
