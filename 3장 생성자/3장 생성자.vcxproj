@@ -148,6 +148,7 @@
     <ClCompile Include="newHuman.cpp" />
     <ClCompile Include="NodefCon.cpp" />
     <ClCompile Include="TimeCopy.cpp" />
+    <ClCompile Include="생성자 테스트.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
