@@ -145,6 +145,7 @@
     <ClCompile Include="DefConstructor.cpp" />
     <ClCompile Include="Destructor.cpp" />
     <ClCompile Include="HumanCopy.cpp" />
+    <ClCompile Include="InitConstMember.cpp" />
     <ClCompile Include="newHuman.cpp" />
     <ClCompile Include="NodefCon.cpp" />
     <ClCompile Include="TimeCopy.cpp" />
