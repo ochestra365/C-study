@@ -18,5 +18,11 @@
     <ClCompile Include="InfoHide.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Carclass.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Self99page.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
