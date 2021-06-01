@@ -38,9 +38,16 @@ public:
 void PrintHuman(Human who) {
 	who.intro();
 }
-
+void print_line() {
+	printf("\n");
+	for (int i = 0; i < 50; i++) {
+		printf("=");
+	}
+	printf("\n");
+}
 int main() {
 	printf("이름과 나이를 적으세요\n(단, 이름은 12자 미만, 나이는 0~120까지 입력가능\n");
+	print_line();
 	while (1) {
 		char name[12];
 		int age;
