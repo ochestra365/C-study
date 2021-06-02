@@ -144,7 +144,12 @@
     <ClCompile Include="FriendFunc.cpp" />
     <ClCompile Include="FriendMember.cpp" />
     <ClCompile Include="InfoHide.cpp" />
+    <ClCompile Include="StaticFunc.cpp" />
     <ClCompile Include="Self99page.cpp" />
+    <ClCompile Include="staticmember.cpp" />
+    <ClCompile Include="staticTest.cpp" />
+    <ClCompile Include="Subject1.cpp" />
+    <ClCompile Include="this.cpp" />
     <ClCompile Include="선생님이 푸신 코드.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
