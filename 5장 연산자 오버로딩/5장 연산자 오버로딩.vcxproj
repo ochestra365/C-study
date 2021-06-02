@@ -142,6 +142,7 @@
     <ClCompile Include="AddOperator.cpp" />
     <ClCompile Include="operator1.cpp" />
     <ClCompile Include="TimeAdd.cpp" />
+    <ClCompile Include="선생님이 만든 operator.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -23,7 +23,6 @@ public:
 };
 
 int main() {
-
 	MyTest obj1(10, 20);
 	MyTest obj2(20, 10);
 	MyTest obj;
