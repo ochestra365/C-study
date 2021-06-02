@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{b7dce54b-3f46-4cd1-be39-4c2e80f5e464}</ProjectGuid>
-    <RootNamespace>My4장캡슐화</RootNamespace>
+    <ProjectGuid>{17b6a193-231f-4596-9f1e-381656140513}</ProjectGuid>
+    <RootNamespace>My5장연산자오버로딩</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,22 +139,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Carclass.cpp" />
-    <ClCompile Include="ConstMemberInit.cpp" />
-    <ClCompile Include="FriendClass.cpp" />
-    <ClCompile Include="FriendFunc.cpp" />
-    <ClCompile Include="FriendMember.cpp" />
-    <ClCompile Include="GlobalInit.cpp" />
-    <ClCompile Include="InfoHide.cpp" />
-    <ClCompile Include="ShareInfo.cpp" />
-    <ClCompile Include="StaticConst.cpp" />
-    <ClCompile Include="StaticFunc.cpp" />
-    <ClCompile Include="Self99page.cpp" />
-    <ClCompile Include="staticmember.cpp" />
-    <ClCompile Include="staticTest.cpp" />
-    <ClCompile Include="Subject1.cpp" />
-    <ClCompile Include="this.cpp" />
-    <ClCompile Include="선생님이 푸신 코드.cpp" />
+    <ClCompile Include="AddOperator.cpp" />
+    <ClCompile Include="operator1.cpp" />
+    <ClCompile Include="TimeAdd.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{b7dce54b-3f46-4cd1-be39-4c2e80f5e464}</ProjectGuid>
-    <RootNamespace>My4장캡슐화</RootNamespace>
+    <ProjectGuid>{17f8c3d3-4b68-401b-af5a-c09cdc2ed23b}</ProjectGuid>
+    <RootNamespace>ConstFunc</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,22 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Carclass.cpp" />
-    <ClCompile Include="ConstMemberInit.cpp" />
-    <ClCompile Include="FriendClass.cpp" />
-    <ClCompile Include="FriendFunc.cpp" />
-    <ClCompile Include="FriendMember.cpp" />
-    <ClCompile Include="GlobalInit.cpp" />
-    <ClCompile Include="InfoHide.cpp" />
-    <ClCompile Include="ShareInfo.cpp" />
-    <ClCompile Include="StaticConst.cpp" />
-    <ClCompile Include="StaticFunc.cpp" />
-    <ClCompile Include="Self99page.cpp" />
-    <ClCompile Include="staticmember.cpp" />
-    <ClCompile Include="staticTest.cpp" />
-    <ClCompile Include="Subject1.cpp" />
-    <ClCompile Include="this.cpp" />
-    <ClCompile Include="선생님이 푸신 코드.cpp" />
+    <ClCompile Include="ConstFunc.cpp" />
+    <ClCompile Include="matable.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="mutable.pp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
