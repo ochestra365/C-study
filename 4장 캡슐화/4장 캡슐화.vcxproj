@@ -143,7 +143,9 @@
     <ClCompile Include="FriendClass.cpp" />
     <ClCompile Include="FriendFunc.cpp" />
     <ClCompile Include="FriendMember.cpp" />
+    <ClCompile Include="GlobalInit.cpp" />
     <ClCompile Include="InfoHide.cpp" />
+    <ClCompile Include="ShareInfo.cpp" />
     <ClCompile Include="StaticFunc.cpp" />
     <ClCompile Include="Self99page.cpp" />
     <ClCompile Include="staticmember.cpp" />
