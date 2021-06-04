@@ -139,7 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DefConstructor.cpp" />
+    <ClCompile Include="HumanCopy.cpp" />
     <ClCompile Include="newHuman.cpp" />
+    <ClCompile Include="NoDefCon.cpp" />
+    <ClCompile Include="Timeclass.cpp" />
     <ClCompile Include="파괴자.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
