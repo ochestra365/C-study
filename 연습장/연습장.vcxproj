@@ -139,10 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ConvertClass.cpp" />
+    <ClCompile Include="Convertint.cpp" />
     <ClCompile Include="CopyConstructor.cpp" />
     <ClCompile Include="DefConstructor.cpp" />
     <ClCompile Include="double2Time.cpp" />
     <ClCompile Include="HumanCopy.cpp" />
+    <ClCompile Include="InfoHide.cpp" />
     <ClCompile Include="InitConstMember.cpp" />
     <ClCompile Include="InitRefMember.cpp" />
     <ClCompile Include="int2Time.cpp" />

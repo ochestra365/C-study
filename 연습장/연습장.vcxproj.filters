@@ -16,6 +16,9 @@
     <Filter Include="소스 파일\3장">
       <UniqueIdentifier>{9ac6b75f-f110-4cf7-9196-ac9d1255748a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\4장">
+      <UniqueIdentifier>{124162ca-4247-4a1e-a8c7-7bc28bbf037f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="newHuman.cpp">
@@ -48,7 +51,16 @@
     <ClCompile Include="InitRefMember.cpp">
       <Filter>소스 파일\3장</Filter>
     </ClCompile>
+    <ClCompile Include="Convertint.cpp">
+      <Filter>소스 파일\3장</Filter>
+    </ClCompile>
     <ClCompile Include="double2Time.cpp">
+      <Filter>소스 파일\3장</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvertClass.cpp">
+      <Filter>소스 파일\3장</Filter>
+    </ClCompile>
+    <ClCompile Include="InfoHide.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
