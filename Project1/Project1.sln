@@ -23,6 +23,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "06장 상속", "..\06장 �
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "7장 다형성", "..\7장 다형성\7장 다형성.vcxproj", "{56AD35F3-DDE1-4D71-8930-F5F92DEBF197}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "연습장", "..\연습장\연습장.vcxproj", "{525E9C58-1815-4C1C-BF5D-54887D1EA788}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -111,6 +113,14 @@ Global
 		{56AD35F3-DDE1-4D71-8930-F5F92DEBF197}.Release|x64.Build.0 = Release|x64
 		{56AD35F3-DDE1-4D71-8930-F5F92DEBF197}.Release|x86.ActiveCfg = Release|Win32
 		{56AD35F3-DDE1-4D71-8930-F5F92DEBF197}.Release|x86.Build.0 = Release|Win32
+		{525E9C58-1815-4C1C-BF5D-54887D1EA788}.Debug|x64.ActiveCfg = Debug|x64
+		{525E9C58-1815-4C1C-BF5D-54887D1EA788}.Debug|x64.Build.0 = Debug|x64
+		{525E9C58-1815-4C1C-BF5D-54887D1EA788}.Debug|x86.ActiveCfg = Debug|Win32
+		{525E9C58-1815-4C1C-BF5D-54887D1EA788}.Debug|x86.Build.0 = Debug|Win32
+		{525E9C58-1815-4C1C-BF5D-54887D1EA788}.Release|x64.ActiveCfg = Release|x64
+		{525E9C58-1815-4C1C-BF5D-54887D1EA788}.Release|x64.Build.0 = Release|x64
+		{525E9C58-1815-4C1C-BF5D-54887D1EA788}.Release|x86.ActiveCfg = Release|Win32
+		{525E9C58-1815-4C1C-BF5D-54887D1EA788}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
