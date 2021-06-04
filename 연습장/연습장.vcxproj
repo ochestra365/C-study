@@ -139,8 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CopyConstructor.cpp" />
     <ClCompile Include="DefConstructor.cpp" />
+    <ClCompile Include="double2Time.cpp" />
     <ClCompile Include="HumanCopy.cpp" />
+    <ClCompile Include="InitConstMember.cpp" />
+    <ClCompile Include="InitRefMember.cpp" />
+    <ClCompile Include="int2Time.cpp" />
     <ClCompile Include="newHuman.cpp" />
     <ClCompile Include="NoDefCon.cpp" />
     <ClCompile Include="Timeclass.cpp" />
