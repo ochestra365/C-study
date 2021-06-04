@@ -145,6 +145,9 @@
     <ClCompile Include="CopyConstructor.cpp" />
     <ClCompile Include="DefConstructor.cpp" />
     <ClCompile Include="double2Time.cpp" />
+    <ClCompile Include="FriendClass.cpp" />
+    <ClCompile Include="FriendFunc.cpp" />
+    <ClCompile Include="FriendMember.cpp" />
     <ClCompile Include="HumanCopy.cpp" />
     <ClCompile Include="InfoHide.cpp" />
     <ClCompile Include="InitConstMember.cpp" />

@@ -64,6 +64,15 @@
       <Filter>소스 파일\4장</Filter>
     </ClCompile>
     <ClCompile Include="CarClass.cpp">
+      <Filter>소스 파일\4장</Filter>
+    </ClCompile>
+    <ClCompile Include="FriendFunc.cpp">
+      <Filter>소스 파일\4장</Filter>
+    </ClCompile>
+    <ClCompile Include="FriendClass.cpp">
+      <Filter>소스 파일\4장</Filter>
+    </ClCompile>
+    <ClCompile Include="FriendMember.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
