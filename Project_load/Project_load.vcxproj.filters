@@ -15,37 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="TimeAdd.cpp">
+    <ClCompile Include="step1.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="AddOperator.cpp">
+    <ClCompile Include="step2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="operator1.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="선생님이 만든 operator.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="operator2.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="TimeOpPlus.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="TimePlusInt.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="TimePlusInt2.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="TimePlust185.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="TimeRelation.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="HumanAssign.cpp">
+    <ClCompile Include="step3.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

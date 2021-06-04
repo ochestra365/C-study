@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{17b6a193-231f-4596-9f1e-381656140513}</ProjectGuid>
-    <RootNamespace>My5장연산자오버로딩</RootNamespace>
+    <ProjectGuid>{640af27b-e9e8-4480-aa9f-b69a293477c7}</ProjectGuid>
+    <RootNamespace>Projectload</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,17 +139,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AddOperator.cpp" />
-    <ClCompile Include="HumanAssign.cpp" />
-    <ClCompile Include="operator1.cpp" />
-    <ClCompile Include="operator2.cpp" />
-    <ClCompile Include="TimeAdd.cpp" />
-    <ClCompile Include="TimeOpPlus.cpp" />
-    <ClCompile Include="TimePlusInt.cpp" />
-    <ClCompile Include="TimePlusInt2.cpp" />
-    <ClCompile Include="TimePlust185.cpp" />
-    <ClCompile Include="TimeRelation.cpp" />
-    <ClCompile Include="선생님이 만든 operator.cpp" />
+    <ClCompile Include="step1.cpp" />
+    <ClCompile Include="step2.cpp" />
+    <ClCompile Include="step3.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
