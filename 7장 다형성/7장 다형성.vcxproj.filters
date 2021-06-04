@@ -15,34 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="InheritStudent.cpp">
+    <ClCompile Include="선생님의 가상함수.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="InheritAccess.cpp">
+    <ClCompile Include="ObjectPointer2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Override.cpp">
+    <ClCompile Include="VirtFunc.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="InheritGraduate.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="MultiInherit.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="VirtualBase1.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="PrivateInherit.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="NestClass.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="상속형 못풀었다.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="문제.cpp">
+    <ClCompile Include="VirtFunc2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

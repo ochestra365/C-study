@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{8cbf1e31-f4f6-4fb0-9eed-679c15d9ad5c}</ProjectGuid>
-    <RootNamespace>My06장상속</RootNamespace>
+    <ProjectGuid>{56ad35f3-dde1-4d71-8930-f5f92debf197}</ProjectGuid>
+    <RootNamespace>My7장다형성</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,16 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="InheritAccess.cpp" />
-    <ClCompile Include="InheritGraduate.cpp" />
-    <ClCompile Include="InheritStudent.cpp" />
-    <ClCompile Include="MultiInherit.cpp" />
-    <ClCompile Include="NestClass.cpp" />
-    <ClCompile Include="Override.cpp" />
-    <ClCompile Include="PrivateInherit.cpp" />
-    <ClCompile Include="VirtualBase1.cpp" />
-    <ClCompile Include="문제.cpp" />
-    <ClCompile Include="상속형 못풀었다.cpp" />
+    <ClCompile Include="ObjectPointer2.cpp" />
+    <ClCompile Include="VirtFunc.cpp" />
+    <ClCompile Include="VirtFunc2.cpp" />
+    <ClCompile Include="선생님의 가상함수.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
