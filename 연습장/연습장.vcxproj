@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CarClass.cpp" />
     <ClCompile Include="ConvertClass.cpp" />
     <ClCompile Include="Convertint.cpp" />
     <ClCompile Include="CopyConstructor.cpp" />
