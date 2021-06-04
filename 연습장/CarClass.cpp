@@ -15,7 +15,7 @@ public:
 		if (aGear >= 0 && aGear <= 6) {
 			gear = aGear;
 		}
-	}
+	}//¤·
 	void RotateWheel(int Delta) {
 		int tAngle = angle + Delta;
 		if (tAngle >= -45 && tAngle <= 45) {
