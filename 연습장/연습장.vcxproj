@@ -154,6 +154,7 @@
     <ClCompile Include="FriendFunc.cpp" />
     <ClCompile Include="FriendMember.cpp" />
     <ClCompile Include="GlobalInit.cpp" />
+    <ClCompile Include="Humanassing.cpp" />
     <ClCompile Include="HumanCopy.cpp" />
     <ClCompile Include="InfoHide.cpp" />
     <ClCompile Include="InitConstMember.cpp" />
@@ -162,11 +163,13 @@
     <ClCompile Include="newHuman.cpp" />
     <ClCompile Include="NoDefCon.cpp" />
     <ClCompile Include="ObjCount.cpp" />
+    <ClCompile Include="operator2.cpp" />
     <ClCompile Include="ShareInfo.cpp" />
     <ClCompile Include="StaticConst.cpp" />
     <ClCompile Include="StaticFunc.cpp" />
     <ClCompile Include="this.cpp" />
     <ClCompile Include="this_s.cpp" />
+    <ClCompile Include="Timeadd.cpp" />
     <ClCompile Include="Timeclass.cpp" />
     <ClCompile Include="선생님이 푸신 코드.cpp" />
     <ClCompile Include="파괴자.cpp" />

@@ -7,7 +7,7 @@ class Human {
 private:
 	char* pname;
 	int age;
-//멤버 변수
+
 public:
 	Human() {
 		pname = new char[1];
@@ -28,14 +28,14 @@ public:
 		delete[]pname;
 	}
 	void intro() {
-		printf("이름 =%s, 나이 =%d\n", pname, age);
+		printf("이름 = %s, 나이 = %d\n", pname, age);
 	}
 };
-
 
 int main() {
 	Human s1("강감찬", 1424);
 	Human boy;
 	boy = s1;
 	boy.intro();
+	return 0;
 }

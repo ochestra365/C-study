@@ -114,5 +114,14 @@
     <ClCompile Include="AddOperator_s.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Humanassing.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="operator2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Timeadd.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
