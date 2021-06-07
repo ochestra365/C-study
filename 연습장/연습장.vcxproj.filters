@@ -72,8 +72,38 @@
     <ClCompile Include="FriendClass.cpp">
       <Filter>소스 파일\4장</Filter>
     </ClCompile>
-    <ClCompile Include="FriendMember.cpp">
+    <ClCompile Include="Back.c">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="FriendMember.cpp">
+      <Filter>소스 파일\4장</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjCount.cpp">
+      <Filter>소스 파일\4장</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticFunc.cpp">
+      <Filter>소스 파일\4장</Filter>
+    </ClCompile>
+    <ClCompile Include="GlobalInit.cpp">
+      <Filter>소스 파일\4장</Filter>
+    </ClCompile>
+    <ClCompile Include="this.cpp">
+      <Filter>소스 파일\4장</Filter>
+    </ClCompile>
+    <ClCompile Include="ShareInfo.cpp">
+      <Filter>소스 파일\4장</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstMember.cpp">
+      <Filter>소스 파일\4장</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstMemberInit.cpp">
+      <Filter>소스 파일\4장</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticConst.cpp">
+      <Filter>소스 파일\4장</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstFunc.cpp">
+      <Filter>소스 파일\4장</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

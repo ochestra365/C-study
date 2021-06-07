@@ -139,11 +139,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GraphicObject.cpp" />
+    <ClCompile Include="MemCallMem.cpp" />
     <ClCompile Include="ObjectPointer2.cpp" />
     <ClCompile Include="Overrideable.cpp" />
+    <ClCompile Include="PureVirtual.cpp" />
+    <ClCompile Include="SwapArray.cpp" />
+    <ClCompile Include="SwapFunc.cpp" />
+    <ClCompile Include="SwapObject.cpp" />
+    <ClCompile Include="swaptemp.cpp" />
+    <ClCompile Include="swapvoid.cpp" />
+    <ClCompile Include="TempReturn.cpp" />
+    <ClCompile Include="VirtDesturctor2.cpp" />
     <ClCompile Include="VirtFunc.cpp" />
     <ClCompile Include="VirtFunc2.cpp" />
     <ClCompile Include="virtualSource.cpp" />
+    <ClCompile Include="가상소멸자.cpp" />
     <ClCompile Include="선생님의 가상함수.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
