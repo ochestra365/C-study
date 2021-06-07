@@ -2,14 +2,13 @@
 class Time {
 private:
 	int hour, min, sec;
-
 public:
 	Time(){}
 	Time(int h, int m, int s) { hour = h; min = m; sec = s; }
 	void OutTime() {
 		printf("%d:%d:%d\n", hour, min, sec);
 	}
-	const Time operator+(const Time& other)const {//원칙은 레퍼런스 타입이 와야 한다. 클래스 타입이 와야 한다. 더한 값을 그대로 가져가야 한다.
+	const Time operator+(const Time& other)const {
 		Time t;
 		t.sec = sec + other.sec;
 		t.min = min + other.min;
@@ -31,4 +30,5 @@ int main() {
 	t3 = t1 + t2;
 	t3 = t1.operator+(t2);
 	t3.OutTime();
+	return 0;
 }

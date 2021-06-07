@@ -141,14 +141,18 @@
   <ItemGroup>
     <ClCompile Include="GraphicObject.cpp" />
     <ClCompile Include="MemCallMem.cpp" />
+    <ClCompile Include="NonTypeArgument.cpp" />
     <ClCompile Include="ObjectPointer2.cpp" />
     <ClCompile Include="Overrideable.cpp" />
+    <ClCompile Include="PostValueTemp.cpp" />
     <ClCompile Include="PureVirtual.cpp" />
     <ClCompile Include="SwapArray.cpp" />
     <ClCompile Include="SwapFunc.cpp" />
     <ClCompile Include="SwapObject.cpp" />
     <ClCompile Include="swaptemp.cpp" />
     <ClCompile Include="swapvoid.cpp" />
+    <ClCompile Include="TemplateDefault.cpp" />
+    <ClCompile Include="TempMember.cpp" />
     <ClCompile Include="TempReturn.cpp" />
     <ClCompile Include="VirtDesturctor2.cpp" />
     <ClCompile Include="VirtFunc.cpp" />

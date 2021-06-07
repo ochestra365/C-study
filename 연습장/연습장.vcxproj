@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AddOperator_s.cpp" />
     <ClCompile Include="Back.c" />
     <ClCompile Include="CarClass.cpp" />
     <ClCompile Include="ConstFunc.cpp" />
@@ -165,7 +166,9 @@
     <ClCompile Include="StaticConst.cpp" />
     <ClCompile Include="StaticFunc.cpp" />
     <ClCompile Include="this.cpp" />
+    <ClCompile Include="this_s.cpp" />
     <ClCompile Include="Timeclass.cpp" />
+    <ClCompile Include="선생님이 푸신 코드.cpp" />
     <ClCompile Include="파괴자.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

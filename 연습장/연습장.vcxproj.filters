@@ -105,5 +105,14 @@
     <ClCompile Include="ConstFunc.cpp">
       <Filter>소스 파일\4장</Filter>
     </ClCompile>
+    <ClCompile Include="this_s.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="선생님이 푸신 코드.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AddOperator_s.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
