@@ -139,13 +139,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="classTemplate.cpp" />
     <ClCompile Include="GraphicObject.cpp" />
     <ClCompile Include="MemCallMem.cpp" />
+    <ClCompile Include="NestTemplate.cpp" />
     <ClCompile Include="NonTypeArgument.cpp" />
     <ClCompile Include="ObjectPointer2.cpp" />
     <ClCompile Include="Overrideable.cpp" />
     <ClCompile Include="PostValueTemp.cpp" />
     <ClCompile Include="PureVirtual.cpp" />
+    <ClCompile Include="Specialization.cpp" />
+    <ClCompile Include="Specialization2.cpp" />
     <ClCompile Include="SwapArray.cpp" />
     <ClCompile Include="SwapFunc.cpp" />
     <ClCompile Include="SwapObject.cpp" />
@@ -160,6 +164,9 @@
     <ClCompile Include="virtualSource.cpp" />
     <ClCompile Include="가상소멸자.cpp" />
     <ClCompile Include="선생님의 가상함수.cpp" />
+    <ClCompile Include="클래스 템플릿 특수화.cpp" />
+    <ClCompile Include="함수템플릿.cpp" />
+    <ClCompile Include="함수템플릿2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
