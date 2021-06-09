@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{e659a912-53f0-4657-b566-c32503eda60c}</ProjectGuid>
-    <RootNamespace>My9장예외처리</RootNamespace>
+    <ProjectGuid>{e2cd8cc2-339b-49df-a360-c668c7c19a2d}</ProjectGuid>
+    <RootNamespace>My10장타입정보</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,22 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CtorException.cpp" />
-    <ClCompile Include="ExceptionClass.cpp" />
-    <ClCompile Include="ExceptionEnum.cpp" />
-    <ClCompile Include="ExceptionObject.cpp" />
-    <ClCompile Include="ExceptionReturn.cpp" />
-    <ClCompile Include="exdynamic.cpp" />
-    <ClCompile Include="extretry.cpp" />
-    <ClCompile Include="InheritException.cpp" />
-    <ClCompile Include="nesttry.cpp" />
-    <ClCompile Include="stackkunwinding.cpp" />
-    <ClCompile Include="teminate.cpp" />
-    <ClCompile Include="throwfunc.cpp" />
-    <ClCompile Include="trycatch.cpp" />
-    <ClCompile Include="tryfunc.cpp" />
-    <ClCompile Include="unexpected.cpp" />
-    <ClCompile Include="스택되감기.cpp" />
+    <ClCompile Include="ccast.cpp" />
+    <ClCompile Include="CStyleRTTI.cpp" />
+    <ClCompile Include="RTTI.cpp" />
+    <ClCompile Include="RTTI2.cpp" />
+    <ClCompile Include="static_cast.cpp" />
+    <ClCompile Include="static_cast2.cpp" />
+    <ClCompile Include="static_Text.cpp" />
+    <ClCompile Include="typeid.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

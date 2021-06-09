@@ -15,52 +15,28 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="trycatch.cpp">
+    <ClCompile Include="RTTI.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="throwfunc.cpp">
+    <ClCompile Include="typeid.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="stackkunwinding.cpp">
+    <ClCompile Include="RTTI2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="스택되감기.cpp">
+    <ClCompile Include="CStyleRTTI.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="nesttry.cpp">
+    <ClCompile Include="ccast.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="ExceptionReturn.cpp">
+    <ClCompile Include="static_cast.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="ExceptionEnum.cpp">
+    <ClCompile Include="static_cast2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="ExceptionObject.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="InheritException.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="ExceptionClass.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="CtorException.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="tryfunc.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="teminate.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="unexpected.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="exdynamic.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="extretry.cpp">
+    <ClCompile Include="static_Text.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
