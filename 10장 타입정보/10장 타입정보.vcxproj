@@ -140,9 +140,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ccast.cpp" />
+    <ClCompile Include="const_cast.cpp" />
     <ClCompile Include="CStyleRTTI.cpp" />
+    <ClCompile Include="dynamic_cast.cpp" />
+    <ClCompile Include="malloc.c" />
+    <ClCompile Include="MemberPointer.cpp" />
+    <ClCompile Include="MemberPointOp.cpp" />
+    <ClCompile Include="MemPtr1.cpp" />
     <ClCompile Include="RTTI.cpp" />
     <ClCompile Include="RTTI2.cpp" />
+    <ClCompile Include="selfTest.cpp" />
     <ClCompile Include="static_cast.cpp" />
     <ClCompile Include="static_cast2.cpp" />
     <ClCompile Include="static_Text.cpp" />

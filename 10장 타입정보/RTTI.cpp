@@ -19,7 +19,16 @@
 //	((Child*)p)->PrintNum();//부모형태로 형변환 된 것을 자식 형태로 강제 형변환을 일으킴-->부모 객체는 프린트 넘이 없다. 그래서 이상한 쓰레기 값이 출력된다.
 //	//자식 객체의 포인터가 자식객체를 가리킨다.
 //}
-//
+//void func(Parent* p) {
+//	p->PrintMe();
+//	Child* c = dynamic_cast<Child*>(p);
+//	if (c) {
+//		c->PrintNum();
+//	}
+//	else {
+//		puts("이 객체는 num을 가지고 있지 않습니다.");
+//	}
+//}
 //int main() {
 //	Parent p;
 //	Child c(5);
