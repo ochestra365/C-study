@@ -51,13 +51,13 @@
     <ClCompile Include="MemberPointer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="malloc.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="MemberPointOp.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="MemPtr1.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="malloc.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
