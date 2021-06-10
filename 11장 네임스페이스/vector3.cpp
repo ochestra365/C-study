@@ -13,7 +13,7 @@ int main() {// 문제 처리에서 데이터 입출력의 방향성이 중요할 때 주로 사용한다.
 
 	//sort(arr.begin(), arr.end());
 	sort(arr.begin(), arr.end(), compare);
-	for (auto i = 0; i < arr.size(); i++) {
+	for (auto i = 0; i < arr.size(); i++) {//자동으로 컴파일이 자료형을 맞춰준다.
 		cout << arr[i] << endl;
 	}
 	return 0;
