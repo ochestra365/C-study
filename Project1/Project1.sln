@@ -35,6 +35,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "10장 타입 정보", "..\1
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "12장 표준라이브러리", "..\11장 네임스페이스\11장 네임스페이스.vcxproj", "{16B280AA-86DD-467B-A772-8F0EEAC008A1}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Gostop", "..\Gostop\Gostop.vcxproj", "{CE507FDB-BCF6-4764-97C4-B319EDBBF29C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -171,6 +173,14 @@ Global
 		{16B280AA-86DD-467B-A772-8F0EEAC008A1}.Release|x64.Build.0 = Release|x64
 		{16B280AA-86DD-467B-A772-8F0EEAC008A1}.Release|x86.ActiveCfg = Release|Win32
 		{16B280AA-86DD-467B-A772-8F0EEAC008A1}.Release|x86.Build.0 = Release|Win32
+		{CE507FDB-BCF6-4764-97C4-B319EDBBF29C}.Debug|x64.ActiveCfg = Debug|x64
+		{CE507FDB-BCF6-4764-97C4-B319EDBBF29C}.Debug|x64.Build.0 = Debug|x64
+		{CE507FDB-BCF6-4764-97C4-B319EDBBF29C}.Debug|x86.ActiveCfg = Debug|Win32
+		{CE507FDB-BCF6-4764-97C4-B319EDBBF29C}.Debug|x86.Build.0 = Debug|Win32
+		{CE507FDB-BCF6-4764-97C4-B319EDBBF29C}.Release|x64.ActiveCfg = Release|x64
+		{CE507FDB-BCF6-4764-97C4-B319EDBBF29C}.Release|x64.Build.0 = Release|x64
+		{CE507FDB-BCF6-4764-97C4-B319EDBBF29C}.Release|x86.ActiveCfg = Release|Win32
+		{CE507FDB-BCF6-4764-97C4-B319EDBBF29C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
