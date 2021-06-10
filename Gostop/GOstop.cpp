@@ -12,7 +12,7 @@ const int MaxCard = 48; // 최대값 카드를 상수화해줌 -->48이다.
 const int CardGap = 4;// 카드의 각 차이는 4이다. 
 const int Speed = 1000;//속도는 1000이다. 1000ms이므로 1초를 나타낸다.
 const int PromptSpeed = 2000;//장려되는 속도는 1000이다.
-
+//덱은 스택 자료형이고, 손패는 시퀀스형 자료형이다. 삽입정렬식으로 손패에 들어오고 나간다. 연결자료구조랑 스택자료구조를 더 공부하면 이 프로그램을 더 잘 이해할 수 있을 것이다.
 // 화투 한장을 표현하는 클래스
 struct SCard
 {
@@ -414,64 +414,64 @@ void main()
 				TurnPae->InsertCard(Blanket.RemoveCard(UserSel));//아니면 담요에 넣어주는 것이다.
 			}
 			TurnPae->InsertCard(Turn->RemoveCard(UserIdx));//내턴의 패에 카드를 넣는다? 이거 뭔말인 지 모르겠다.
-			if (DeckSel != -1 && DeckSel > UserSel) {
-				DeckSel -= (UserTriple ? 3 : 1);
+			if (DeckSel != -1 && DeckSel > UserSel) {//덱이 존재하고 덱의 카드 인덱스가 내 카드인덱스보다 높다?? 이것도 뭔말인지 모르겠따.
+				DeckSel -= (UserTriple ? 3 : 1);//트리플 먹었다 이뜻인가?
 			}
 		}
-		if (DeckSel != -1) {
-			if (DeckTriple) {
-				for (i = 0; i < 3; i++) {
-					TurnPae->InsertCard(Blanket.RemoveCard(DeckSel - 1));
+		if (DeckSel != -1) {//계속 유저는 먹을 선택중이다.
+			if (DeckTriple) {//트리플 떴다?
+				for (i = 0; i < 3; i++) {//3번 먹을 거지? 그러니까 해당 반복구문을 3번 돌려주겠지
+					TurnPae->InsertCard(Blanket.RemoveCard(DeckSel - 1));//내 턴에 카드를 넣는데 (담요에서 카드를 제거한다.) 덱에서 선택한 것도 제거한다.
 				}
 			}
-			else {
-				TurnPae->InsertCard(Blanket.RemoveCard(DeckSel));
+			else {//트리플이 안떴다?
+				TurnPae->InsertCard(Blanket.RemoveCard(DeckSel));//그냥 내패에서 담요로 패를 던진다.
 			}
-			TurnPae->InsertCard(DeckCard);
+			TurnPae->InsertCard(DeckCard);//턴에 덱카드에 카드를 삽입한다.
 		}
 		else {
-			Blanket.InsertCard(DeckCard);
+			Blanket.InsertCard(DeckCard);//담요에 카드를 덱에서 뽑은 거를 놓는다.
 		}
 
 		// 쪽, 따닥, 싹쓸이 조건을 점검하고 상대방의 피를 뺏는다.
-		nSnatch = 0;
-		if (Deck.IsNotLast()) {
-			if (UserSel == -1 && SameNum == 1 && DeckCard.GetNumber() == UserCard.GetNumber()) {
-				nSnatch++;
-				OutPrompt("쪽입니다.", PromptSpeed);
+		nSnatch = 0;//손맛이 최고지 이거는 슥 가져오는 거를 말하는 것이다.
+		if (Deck.IsNotLast()) {//덱이 마지막이 아니면 이거 실행해라
+			if (UserSel == -1 && SameNum == 1 && DeckCard.GetNumber() == UserCard.GetNumber()) {//유저가 현재 턴을 종료안하고 덱에서 카드를 뽑았는데 담요에 바로 있다?
+				nSnatch++;//0값을 하나 더해준다. 최종값 1 상대패에서 하나 가져온다.
+				OutPrompt("쪽입니다.", PromptSpeed);//상황지시문을 출력한다.
 			}
-			if (UserSel != -1 && SameNum == 2 && DeckCard.GetNumber() == UserCard.GetNumber()) {
-				nSnatch++;
-				OutPrompt("따닥입니다.", PromptSpeed);
+			if (UserSel != -1 && SameNum == 2 && DeckCard.GetNumber() == UserCard.GetNumber()) {//유저가 현재 턴을 종료안하고 같은 넘버를 2번째 가진 카드패가 덱에서 나왔다?
+				nSnatch++;//0값을 하나 더해준다. 최종값 1 상대패에서 하나 가져온다.
+				OutPrompt("따닥입니다.", PromptSpeed);//상황지시문을 출력한다.
 			}
 			if (Blanket.GetNum() == 0) {
-				nSnatch++;
-				OutPrompt("싹쓸이입니다.", PromptSpeed);
+				nSnatch++;//0값을 하나 더해준다. 최종값 1 상대패에서 하나 가져온다.
+				OutPrompt("싹쓸이입니다.", PromptSpeed);//상황지시문을 출력한다.
 			}
-			if (UserTriple || DeckTriple) {
-				OutPrompt("한꺼번에 세 장을 먹었습니다.", PromptSpeed);
-				nSnatch += UserTriple + DeckTriple;
+			if (UserTriple || DeckTriple) {//유저가 트리플 뜨거나 덱에서 트리플 뜨거나
+				OutPrompt("한꺼번에 세 장을 먹었습니다.", PromptSpeed);//그럼 상황지시문이 이렇게 나온다.
+				nSnatch += UserTriple + DeckTriple;//유저트리플과 덱트리플을 더한 만큼 가져온다.
 			}
 		}
-		for (i = 0; i < nSnatch; i++) {
-			TurnPae->InsertCard(OtherPae->RemovePee());
+		for (i = 0; i < nSnatch; i++) {//가져온 회수만큼 반복문을 돌린다.
+			TurnPae->InsertCard(OtherPae->RemovePee());//상대 손패 터는 거야
 		}
 
 		// 점수를 계산하고 고, 스톱 여부를 질문한다.
-		NewScore = TurnPae->CalcScore();
-		if (Deck.IsNotLast() && NewScore > TurnPae->OldScore) {
-			DrawScreen();
-			if (InputInt("추가 점수를 획득했습니다.(0:스톱, 1:계속)", 0, 1) == 1) {
-				TurnPae->OldScore = NewScore;
-				TurnPae->IncreaseGo();
+		NewScore = TurnPae->CalcScore();//점수 계산 때린 것을 새 점수값에 대입한다.
+		if (Deck.IsNotLast() && NewScore > TurnPae->OldScore) {//덱이 마지막이 아니고, 내턴에 점수가 7점이상 났다?(OldScore는 6이다.)
+			DrawScreen();//스크린 띄운다.
+			if (InputInt("추가 점수를 획득했습니다.(0:스톱, 1:계속)", 0, 1) == 1) {//상황지시문
+				TurnPae->OldScore = NewScore;//지난 스코어는 새스코어로 바뀌고, 이 점수 이상으로 점수가 또 나면 고 스톱을 때린다.
+				TurnPae->IncreaseGo();//Go 횟수를 띄워준다.
 			}
 			else {
-				break;
+				break;//0치며 스탑
 			}
 		}
 	}
-	DrawScreen();
-	OutPrompt("게임이 끝났습니다.", 0);
+	DrawScreen();//초기 디폴트 화면을 띄운다.
+	OutPrompt("게임이 끝났습니다.", 0);//상황지시문
 }
 
 void Initialize()//초기화
