@@ -129,56 +129,57 @@ int CCardSet::FindFirstCard(const char* pName) {//첫번째 카드를 찾는다. 첫번째 �
 }
 
 // 담요 중앙에 카드를 쌓아 놓는 데크
-class CDeck : public CCardSet
+class CDeck : public CCardSet//담요 중앙에 카드를 쌓는 데크는 카드셋을 상속받는다.
 {
 public:
-	CDeck(int asx, int asy) : CCardSet(asx, asy) { ; }
-	void Shuffle() {
-		int i, n;
-		for (i = 0; i < MaxCard; i++) {
-			do {
-				n = random(MaxCard);
-			} while (Card[n].Name[0] != NULL);
-			Card[n] = HwaToo[i];
-			Num++;
+	CDeck(int asx, int asy) : CCardSet(asx, asy) { ; }//생성자는 CCardSet의 카드집합을 상속받는다.
+	void Shuffle() {//화투판을 섞는 함수이다.
+		int i, n;//i는 반복제어 변수이고, n은 랜덤값을 받을 변수이다.
+		for (i = 0; i < MaxCard; i++) {//전체 카드는 48가지 이므로 이 숫자만큼 반복문을 돌린다.
+			do {//do~while문을 써서 적어도 한번 실행문을 돌린다.
+				n = random(MaxCard);//n에 1~48까지 수 중에서 난수값을 대입한다.
+			} while (Card[n].Name[0] != NULL);//카드가 존재할 때 까지 반복한다.
+			Card[n] = HwaToo[i];//화투 배열의 인덱스를 담요 중앙에 놓을 카드값에 대입한다.
+			Num++;//담요 중앙에 놓인 카드가 한장씩 늘어난다.
 		}
 	}
-	SCard Pop() { return RemoveCard(Num - 1); }
-	bool IsEmpty() { return Num == 0; }
-	bool IsNotLast() { return Num > 1; }
-	void Draw(bool bFlip) {
-		gotoxy(sx, sy);
-		cout << "??? " << (bFlip ? Card[Num - 1].Name : "   ");
+	//스택 자료구조를 따른다.
+	SCard Pop() { return RemoveCard(Num - 1); }//담요에서 카드를 뽑는 것이다. RemoveCard함수를 써서 담요중앙에 놓인 전체 숫자에서 하나를 빼준다.
+	bool IsEmpty() { return Num == 0; }//논리값이다. 만약 담요판이 비어있다면 카드가 없다는 뜻으로 0을 반환한다.
+	bool IsNotLast() { return Num > 1; }//논리값이다. 만약 마지막이 아니라면 화투 중앙에 적어도 1개 이상 있다는 의미이다.
+	void Draw(bool bFlip) {//화투중앙에서 카드를 가져오는 것이다.
+		gotoxy(sx, sy);//해당좌표로 움직여라
+		cout << "??? " << (bFlip ? Card[Num - 1].Name : "   ");//카드 인덱스를 가져온다.
 	}
 };
 
 // 게임을 하는 플레이어
-class CPlayer : public CCardSet
+class CPlayer : public CCardSet //CPlayer는 CCarSet의 자식클래스이다.
 {
 public:
-	CPlayer(int asx, int asy) : CCardSet(asx, asy) { ; }
-	void Draw(bool MyTurn) {
-		int i, x;
-		for (i = 0, x = sx; i < Num; i++, x += CardGap) {
-			gotoxy(x, sy);
-			cout << Card[i];
-			if (MyTurn) {
+	CPlayer(int asx, int asy) : CCardSet(asx, asy) { ; }//플레이어가 카드를 던지는 좌표를 나타내는 것이다. CCardSet의 좌표값을 상속 받는다.
+	void Draw(bool MyTurn) {//내 턴에 카드를 뽑는 것 함수를 의미한다.
+		int i, x;//반복 제어 변수와 좌표 평면상(담요) x값의 좌표위치값을 나타낸다.
+		for (i = 0, x = sx; i < Num; i++, x += CardGap) {//카드 공차인 4만큼 움직일 것이다. 그리고 손에 쥔 카드만큼 반복해서 돌려준다.
+			gotoxy(x, sy);//좌표값으로 이동한다.
+			cout << Card[i];//카드의 인덱스에 해당하는 값을 출력한다.
+			if (MyTurn) {//내가 뽑을 차례라면 x의 위치값에서 sy+1만큼 이동한다.
 				gotoxy(x, sy + 1);
-				cout << '[' << i + 1 << ']';
+				cout << '[' << i + 1 << ']';//뽑은 카드의 인덱스이다.
 			}
 		}
 	}
 };
 
 // 게임이 진행되는 담요
-class CBlanket : public CPlayer
+class CBlanket : public CPlayer //CBlanket은 CPlayer를 상속받는다.
 {
 public:
-	CBlanket(int asx, int asy) : CPlayer(asx, asy) { ; }
+	CBlanket(int asx, int asy) : CPlayer(asx, asy) { ; }//담요의 x,y좌표는 CPlayer가 화투판에 던진 좌표값을 상속받는 것이다.
 	void Draw() {
-		CPlayer::Draw(false);
+		CPlayer::Draw(false);//내 턴이 아닐 때 상대 플레이어가 뽑는다.
 	}
-	void DrawSelNum(int* pSame) {
+	void DrawSelNum(int* pSame) {//무슨 함수인지 모르겠다.
 		int n;
 		int* p;
 		for (n = 1, p = pSame; *p != -1; p++, n++) {
@@ -193,44 +194,44 @@ public:
 };
 
 // 플레이어가 먹은 카드의 집합
-class CPlayerPae : public CCardSet
+class CPlayerPae : public CCardSet // CPlayerPae는 CCardSet의 자식클래스이다.
 {
 private:
-	int nGo;
+	int nGo;//몇 번 고했느냐를 묻는 정수형 필드이다.
 
 public:
-	int OldScore;
-	CPlayerPae(int asx, int asy) : CCardSet(asx, asy) { OldScore = 6; nGo = 0; }
-	void Reset() { CCardSet::Reset(); OldScore = 6; nGo = 0; }
-	int GetGo() { return nGo; }
-	void IncreaseGo() { nGo++; }
-	void Draw();
-	SCard RemovePee();
-	int CalcScore();
+	int OldScore;//이전 스코어에대한 데이터를 저장할 인트형 데이터 값 선언
+	CPlayerPae(int asx, int asy) : CCardSet(asx, asy) { OldScore = 6; nGo = 0; }//플레이어 패의 좌표값은 CCardSet의 좌표값을 상속받는다. 그리고 고한 횟수는 처음부터 자연수 일리는 없으니 0으로 초기화한다. 오버라이딩이 사용되었다.
+	void Reset() { CCardSet::Reset(); OldScore = 6; nGo = 0; }//Reset함수이다. CCardSet의 Reset함수를 모두 상속받는다. 초기 6장을 손패에 들고 나는 0번 고한 상태다. 화투판을 상대가 엎거나 내가 엎거나 했을 때 쓰는 것이다. 오버라이딩이 사용되었다.
+	int GetGo() { return nGo; }//고 때리는 것이다. 값을 받아온다.
+	void IncreaseGo() { nGo++; }//고를 외친 만큼 값이 누적된다.
+	void Draw();//부모클래스의 Draw함수를 쓸 수 있따.
+	SCard RemovePee();// 함수헤더이다. 아래에 정의가 있다.
+	int CalcScore();//점수 계산 함수이다. 아래에 정의가 있다.
 };
 
-void CPlayerPae::Draw() {
-	int i, kind;
-	int x[4] = { sx,sx,sx,sx }, py = sy + 3;
+void CPlayerPae::Draw() {//Draw함수에 대한 정의
+	int i, kind;//반복제어변수와 종류
+	int x[4] = { sx,sx,sx,sx }, py = sy + 3;//x좌표값에 대해 4개가 존재하고 y좌표값은 sy에서 3만큼 증가한다.
 
-	for (i = 0; i < Num; i++) {
-		kind = Card[i].GetKind();
-		if (kind < 3) {
-			gotoxy(x[kind], sy + kind);
-			x[kind] += CardGap;
+	for (i = 0; i < Num; i++) {//카드 수만큼 반복한다. 손패에 들고 있는 것이다.
+		kind = Card[i].GetKind();//손패에 들고 있는 카드종류이다. GetKind함수를 통해 카드 인덱스에 해당하는 카드의 종류 데이터를 저장한다.
+		if (kind < 3) {//만약 종류 값이 3보다 작다면
+			gotoxy(x[kind], sy + kind);//해당 좌표르 x 인덱스를 움직이고, sy좌표에 종류값만큼 더해서 올린다.
+			x[kind] += CardGap;//x종류값에 카드차이인 4만큼 더한다.
 		}
-		else {
-			gotoxy(x[3], py);
-			x[3] += CardGap;
-			if (x[3] > 75) {
-				x[3] = sx;
-				py++;
+		else {//손패에 없다면
+			gotoxy(x[3], py);//x좌표는 3인덱스로 움직이고 py값까지 움직인다.
+			x[3] += CardGap;//x배열요소 3번에 만큼 카드 차인 4를 움직여서 x에 대입한다.
+			if (x[3] > 75) {//만약 배열요소값이 75 이상이라면
+				x[3] = sx;//x[3]번에 sx만큼 대입해서 시작한다.
+				py++;//y값을 1더한다.
 			}
 		}
-		cout << Card[i];
+		cout << Card[i];//카드의 인덱스에 해당하는 값을 출력한다.
 	}
-	gotoxy(sx + 23, sy);
-	cout << "점수:" << CalcScore() << "점, " << nGo << "고";
+	gotoxy(sx + 23, sy);//sx에서 23만큼 더하고 sy값의 좌표로 움직인다.
+	cout << "점수:" << CalcScore() << "점, " << nGo << "고";//판을 나타낸다.
 }
 
 SCard CPlayerPae::RemovePee() {
