@@ -6,7 +6,7 @@
 #include <assert.h>// C 표준 라이브러리 중 하나다. C 언어 전처리기 매크로 중 하나인 assert() 이 매크로는 표명을 구현하여 프로그램이 추정한 것을 확인하며 거짓인 경우 진단 메시지를 출력한다.
 #include <iostream>// 기본 입출력과 관련된 객체들을 추가함.
 using namespace std;// 표준 네임스페이스 추가
-
+//화투패는 같은 카드가 각각 4장이 존재하는 듯 하다!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // 전역변수 설정
 const int MaxCard = 48; // 최대값 카드를 상수화해줌 -->48이다.
 const int CardGap = 4;// 카드의 각 차이는 4이다. 
@@ -188,8 +188,8 @@ public:
 		}
 	}
 	void DrawTempCard(int idx, SCard C) {//유저가 뽑고나서 덱의 잔여카드를 나타낸다.
-		gotoxy(sx + idx * CardGap, sy + 1);
-		cout << C;
+		gotoxy(sx + idx * CardGap, sy + 1);//좌표이동
+		cout << C;//출력
 	}
 };
 
@@ -355,65 +355,65 @@ void main()
 		Deck.Draw(true);//데크에서 한장 뽑는다.
 		delay(Speed);//1초 딜레이를 준다.
 		DeckCard = Deck.Pop();//스택자료구조다. 데크에서 한장이 뽑힌 값을 DeckCard에 대입한다.
-		SameNum = Blanket.FindSameCard(DeckCard, arSame);
-		switch (SameNum) {
+		SameNum = Blanket.FindSameCard(DeckCard, arSame);//데크에서 뽑은게 같은 인덱스값이다? 그럼 담요에서 바로 먹어버린다. 아래에 그 경우에 대해 적혀져 있다.
+		switch (SameNum) {//
 		case 0:
-			DeckSel = -1;
-			break;
+			DeckSel = -1;//덱에서 선택한 값에 -1
+			break;//반복문 탈출 ->덱에서 뽑은 카드가 담요에서 아무것도 같은 게 없을 때 상대턴으로 넘기는 것이다.
 		case 1:
-			DeckSel = arSame[0];
-			if (DeckSel == UserSel) {
-				if (Deck.IsNotLast()) {
-					Blanket.InsertCard(DeckCard);
-					Blanket.InsertCard(Turn->RemoveCard(UserIdx));
-					OutPrompt("설사했습니다.", PromptSpeed);
-					continue;
+			DeckSel = arSame[0];//덱에서 뽑은 게 같다? 그럼 아래의 실행구문을 실행한다.
+			if (DeckSel == UserSel) {//덱에서 뽑은 것과 유저가 선택한 것이 같을 경우
+				if (Deck.IsNotLast()) {//덱이 마지막이 아니라면 
+					Blanket.InsertCard(DeckCard);//담요에 카드를 넣어준다.
+					Blanket.InsertCard(Turn->RemoveCard(UserIdx));//담요에 카드를 넣어주고 카드를 가져온다.
+					OutPrompt("설사했습니다.", PromptSpeed);//상황지시문, 그리고 2초의 딜레이를 준다.
+					continue;//그리고 반복문 점프함.
 				}
 				else {
-					DeckSel = -1;
+					DeckSel = -1;//덱에서 뽑은 것과 유저가 선택한 카드인덱스가 같지 않으면 이 구문을 탈출
 				}
 			}
 			break;
 		case 2:
-			if (UserSel == arSame[0]) {
-				DeckSel = arSame[1];
+			if (UserSel == arSame[0]) {//유저가 선택한 것과 같은 것
+				DeckSel = arSame[1];//덱에서 선택한 카드인덱스에 같은 카드의 두번째 배열 인덱스를 나타내라.
 			}
-			else if (UserSel == arSame[1]) {
-				DeckSel = arSame[0];
+			else if (UserSel == arSame[1]) {//유저가 선택한 게 2번째 배열요송와 같은것
+				DeckSel = arSame[0];//덱에서 선택한 카드인덱스에 서로 같은 카드를 나타내는 배열의 처음 배열요소값을 대입하라
 			}
 			else {
-				if (Blanket.GetCard(arSame[0]) == Blanket.GetCard(arSame[1])) {
-					DeckSel = arSame[0];
+				if (Blanket.GetCard(arSame[0]) == Blanket.GetCard(arSame[1])) {//담요에서 같은 게 존재한다? 그러면 재수가 좋은 것이다 그냥 먹는 것이다.
+					DeckSel = arSame[0];//덱에서 선택한 카드인덱스에 서로 같은 카드를 나타내는 배열의 처음 배열요소값을 대입하라
 				}
 				else {
-					Blanket.DrawSelNum(arSame);
-					sprintf(Mes, "어떤 카드를 선택하시겠습니까?(1~%d)", SameNum);
-					DeckSel = arSame[InputInt(Mes, 1, SameNum) - 1];
+					Blanket.DrawSelNum(arSame);//담요에서 선택한 것을 넣는다.
+					sprintf(Mes, "어떤 카드를 선택하시겠습니까?(1~%d)", SameNum);//담요에서 먹을 카드를 선택하라는 상황지시문
+					DeckSel = arSame[InputInt(Mes, 1, SameNum) - 1];//덱에서 같은 거는 플레이어가 하나 먹었으니 논리적으로 없애줘야 맞다
 				}
 			}
 			break;
 		case 3:
-			DeckSel = arSame[1];
-			DeckTriple = true;
+			DeckSel = arSame[1];//덱에서 선택한 것에 서로같은 것을 나타내느 배열요소의 2번째 인자를 대입하라.
+			DeckTriple = true;//덱 트리플은 설사인가? 잘 모르겠따.
 			break;
 		}
-		if (DeckSel != -1) {
-			Blanket.DrawTempCard(DeckSel, DeckCard);
+		if (DeckSel != -1) {//덱에서 선택한 것이 -1값이 아니라면
+			Blanket.DrawTempCard(DeckSel, DeckCard);//담요에서 예비카드를 뽑는다.
 		}
-		Deck.Draw(false);
-		delay(Speed);
+		Deck.Draw(false);//덱에서 드라우하는 것을 멈추고
+		delay(Speed);//1초의 시간을 들여 시행한다.
 
 		// 일치하는 카드를 거둬 들인다. 세 장을 먹은 경우는 전부 가져 온다.
-		if (UserSel != -1) {
-			if (UserTriple) {
+		if (UserSel != -1) {//유저가 만약 선택한다면(어차피 흐름상 키보드에서 -1 골라치지는 않을 것이다. 그냥 자연수 칠 테니 음수로 논리를 유저가 선택하는 중이라고 하는 것이다.
+			if (UserTriple) {//만약 트리플 떴다?
 				for (i = 0; i < 3; i++) {
-					TurnPae->InsertCard(Blanket.RemoveCard(UserSel - 1));
+					TurnPae->InsertCard(Blanket.RemoveCard(UserSel - 1));//그럼 내턴에 모두 먹었으니까 담요에서 해당 카드가 사라지지
 				}
 			}
 			else {
-				TurnPae->InsertCard(Blanket.RemoveCard(UserSel));
+				TurnPae->InsertCard(Blanket.RemoveCard(UserSel));//아니면 담요에 넣어주는 것이다.
 			}
-			TurnPae->InsertCard(Turn->RemoveCard(UserIdx));
+			TurnPae->InsertCard(Turn->RemoveCard(UserIdx));//내턴의 패에 카드를 넣는다? 이거 뭔말인 지 모르겠다.
 			if (DeckSel != -1 && DeckSel > UserSel) {
 				DeckSel -= (UserTriple ? 3 : 1);
 			}
