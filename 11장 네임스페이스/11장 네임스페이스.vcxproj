@@ -140,13 +140,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AssignAppend.cpp" />
+    <ClCompile Include="auto_ptr.cpp" />
     <ClCompile Include="chararray.cpp" />
     <ClCompile Include="cinintstring.cpp" />
+    <ClCompile Include="compare.cpp" />
     <ClCompile Include="coutradix.cpp" />
     <ClCompile Include="cppfileread.cpp" />
     <ClCompile Include="cppfilewrite.cpp" />
+    <ClCompile Include="dynstring.cpp" />
+    <ClCompile Include="shared_ptr.cpp" />
+    <ClCompile Include="stringat.cpp" />
     <ClCompile Include="stringctor.cpp" />
+    <ClCompile Include="stringequalplus.cpp" />
+    <ClCompile Include="stringfind.cpp" />
+    <ClCompile Include="stringin.cpp" />
+    <ClCompile Include="stringinsert.cpp" />
+    <ClCompile Include="stringreplace.cpp" />
     <ClCompile Include="stringsize.cpp" />
+    <ClCompile Include="vector2.cpp" />
+    <ClCompile Include="vector3.cpp" />
+    <ClCompile Include="verctor.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
