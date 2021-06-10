@@ -15,13 +15,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MemFuncArgument.cpp">
+    <ClCompile Include="coutradix.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="예제.c">
+    <ClCompile Include="cinintstring.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="MemPtrInherit.cpp">
+    <ClCompile Include="cppfilewrite.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="cppfileread.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="stringctor.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="stringsize.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="chararray.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

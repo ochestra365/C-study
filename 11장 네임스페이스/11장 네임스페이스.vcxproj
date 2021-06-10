@@ -21,9 +21,10 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{48984fb3-7984-4261-ace6-3625b61f7c97}</ProjectGuid>
-    <RootNamespace>My10장타입정보</RootNamespace>
+    <ProjectGuid>{16b280aa-86dd-467b-a772-8f0eeac008a1}</ProjectGuid>
+    <RootNamespace>My11장네임스페이스</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>12장 표준라이브러리</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -139,9 +140,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="MemFuncArgument.cpp" />
-    <ClCompile Include="MemPtrInherit.cpp" />
-    <ClCompile Include="예제.c" />
+    <ClCompile Include="chararray.cpp" />
+    <ClCompile Include="cinintstring.cpp" />
+    <ClCompile Include="coutradix.cpp" />
+    <ClCompile Include="cppfileread.cpp" />
+    <ClCompile Include="cppfilewrite.cpp" />
+    <ClCompile Include="stringctor.cpp" />
+    <ClCompile Include="stringsize.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
