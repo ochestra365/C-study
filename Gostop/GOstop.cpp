@@ -231,38 +231,39 @@ void CPlayerPae::Draw() {//Draw함수에 대한 정의
 		cout << Card[i];//카드의 인덱스에 해당하는 값을 출력한다.
 	}
 	gotoxy(sx + 23, sy);//sx에서 23만큼 더하고 sy값의 좌표로 움직인다.
-	cout << "점수:" << CalcScore() << "점, " << nGo << "고";//판을 나타낸다.
+	cout << "점수:" << CalcScore() << "점, " << nGo << "고";//판을 나타낸다.-->CalcScore()에 대한 함수헤더이다. 정의는 하단에 존재한다.
 }
 
-SCard CPlayerPae::RemovePee() {
-	int idx;
+SCard CPlayerPae::RemovePee() {//피를 없애는 함수이다.
+	int idx;//화투패의 index명이다.
 
-	idx = FindFirstCard("피");
-	if (idx != -1) {
-		return RemoveCard(idx);
+	idx = FindFirstCard("피");//첫번째 받는 것이 피라는 것이면 idx값에 이것을 저장한다.
+	if (idx != -1) {//만약 -1값이 아니면(일치하는 값이 없다면)
+		return RemoveCard(idx);//카드 인덱스를 지운다.
 	}
-	return SCard();
+	return SCard();//그리고 클래스를 반환한다.
 }
 
-int CPlayerPae::CalcScore() {
-	int i, kind, n[4] = { 0, };
-	int NewScore;
-	static int gscore[] = { 0,0,0,3,4,15 };
+int CPlayerPae::CalcScore() {//함수정의이다.
+	int i, kind, n[4] = { 0, };// 반복제어 변수 i를 선언한다. 그리고 종류값을 받을 변수를 선언한다. 그리고 n[4]배열을 선언하고 0으로 초기화한다.
+	int NewScore;//새로운 점수를 저장할 변수이다.
+	static int gscore[] = { 0,0,0,3,4,15 };//스코어 점수는 배열요소 만큼 올라간다. 물리적 순서와 논리적순서가 일치하며 정적타입으로 선언한 정수형 배열 데이터타입이다.
 
-	for (i = 0; i < Num; i++) {
-		kind = Card[i].GetKind();
-		n[kind]++;
+	for (i = 0; i < Num; i++) {//플레이어 손패수만큼 반복문을 돌린다.
+		kind = Card[i].GetKind();//각 카드에 대한 종류값을 받아와서 플레이어가 들고 있는 손패의 값에 저장한다.
+		n[kind]++;//kind 값을 하나씩 올려준다.
 	}
-	NewScore = gscore[n[0]];
-	if (n[0] == 3 && FindFirstCard("B광") != -1) NewScore--;
-	if (n[1] >= 5) NewScore += (n[1] - 4);
-	if (n[2] >= 5) NewScore += (n[2] - 4);
-	if (n[3] >= 10) NewScore += (n[3] - 9);
+	NewScore = gscore[n[0]];//새로운 점수에 점수를 얻을 스코어를 지시할 것이다.
+	if (n[0] == 3 && FindFirstCard("B광") != -1) NewScore--;//B광이 터지고 첫 배열요소값이 3이고 -1이 아니라면 새로운 점수에서 1을 뺄셈한다.
+	if (n[1] >= 5) NewScore += (n[1] - 4);//2번째 배열요소값이 5이상이라면 새로운 점수에 2번째 배열요소에서 4를 뺄셈한 것을 더한다.
+	if (n[2] >= 5) NewScore += (n[2] - 4);//3번째 배열요소값이 5이상이라면 새로운 점수에 3번째 배열요소에서 4를 뺄셈한 것을 더한다.
+	if (n[3] >= 10) NewScore += (n[3] - 9);//4번째 배열요소값이 10이상이라면 새로운 점수에 4번째 배열요소에서 9를 뺄셈한 것을 더한다.
+	//하단은 뭘 의미하는 지 잘 모르겠음
 	if (FindFirstCard("8십") != -1 && FindFirstCard("5십") != -1 && FindFirstCard("2십") != -1) NewScore += 5;
 	if (FindFirstCard("1오") != -1 && FindFirstCard("2오") != -1 && FindFirstCard("3오") != -1) NewScore += 3;
 	if (FindFirstCard("4오") != -1 && FindFirstCard("5오") != -1 && FindFirstCard("7오") != -1) NewScore += 3;
 	if (FindFirstCard("9오") != -1 && FindFirstCard("J오") != -1 && FindFirstCard("6오") != -1) NewScore += 3;
-	return NewScore;
+	return NewScore;//새로운 점수를 메인에 반환한다.
 }
 
 // 함수 원형
@@ -272,11 +273,11 @@ void OutPrompt(const char* Mes, int Wait = 0);
 int InputInt(const char* Mes, int start, int end);
 
 // 전역 변수
-CDeck Deck(18, 9);
-CPlayer South(5, 20), North(5, 1);
-CBlanket Blanket(5, 12);
-CPlayerPae SouthPae(40, 14), NorthPae(40, 4);
-bool SouthTurn;
+CDeck Deck(18, 9);//
+CPlayer South(5, 20), North(5, 1);//플레이어의 좌표값 South가 내가 플레이어가 되고, North는 컴퓨터가 플레이어가 된다.
+CBlanket Blanket(5, 12);//담요는 각자의 플레이어가 던진 카드값들을 저장할 공간 이다. 좌표값이 실인수로 들어있다.
+CPlayerPae SouthPae(40, 14), NorthPae(40, 4);//각 플레이어의 손패 좌표
+bool SouthTurn;//내 턴은 참이다.
 
 // 프로그램을 총지휘하는 main 함수
 void main()
@@ -284,17 +285,17 @@ void main()
 	int i, ch;
 	int arSame[4], SameNum;
 	char Mes[256];
-	CPlayer* Turn;
-	CPlayerPae* TurnPae, * OtherPae;
-	int UserIdx, UserSel, DeckSel;
-	SCard UserCard, DeckCard;
-	bool UserTriple, DeckTriple;
-	int nSnatch;
-	int NewScore;
+	CPlayer* Turn;//플레이어의 턴을 나타내는 생성자
+	CPlayerPae* TurnPae, * OtherPae;//내 턴의 패와 다른 사람 턴의 패
+	int UserIdx, UserSel, DeckSel;//?
+	SCard UserCard, DeckCard;//생성자 2개 만들어짐, 하나는 User의 카드패 나머지는 Deck의 카드패
+	bool UserTriple, DeckTriple;//?
+	int nSnatch;//담요에서 가져올 카드패의 인덱스를 기억할 변수
+	int NewScore;//메인에서 새 점수를 담을 변수
 
-	randomize();
-	Initialize();
-	for (SouthTurn = true; !Deck.IsEmpty(); SouthTurn = !SouthTurn) {
+	randomize();//랜덤함수
+	Initialize();//초기화
+	for (SouthTurn = true; !Deck.IsEmpty(); SouthTurn = !SouthTurn) {//나의 턴이고, 덱이 비어있지 않으면 내턴이 끝날때까지 아래 실행문을 하는 것이다.
 		DrawScreen();
 		if (SouthTurn) {
 			Turn = &South;
@@ -473,55 +474,55 @@ void main()
 	OutPrompt("게임이 끝났습니다.", 0);
 }
 
-void Initialize()
+void Initialize()//초기화
 {
-	int i;
+	int i;//반복제어변수
 
-	Deck.Shuffle();
-	for (i = 0; i < 10; i++) {
-		South.InsertCard(Deck.Pop());
-		North.InsertCard(Deck.Pop());
-		if (i < 8) Blanket.InsertCard(Deck.Pop());
+	Deck.Shuffle();//덱을 셔플한다.
+	for (i = 0; i < 10; i++) {//10번 셔플한다.
+		South.InsertCard(Deck.Pop());//덱에서 뽑아서 나에게 카드를 던져준다.
+		North.InsertCard(Deck.Pop());//덱에서 뽑아서 상대에게 카드를 던져준다.
+		if (i < 8) Blanket.InsertCard(Deck.Pop());//만약 i가 8미만이라면 담요한테도 한장 던져준다.
 	}
 }
 
-void DrawScreen()
+void DrawScreen()//뽑은 카드를 보여줄 화면이다.
 {
-	clrscr();
-	South.Draw(SouthTurn);
-	North.Draw(!SouthTurn);
-	Blanket.Draw();
-	Deck.Draw(false);
-	SouthPae.Draw();
-	NorthPae.Draw();
+	clrscr();//clrscr() 함수는 화면을 지우는 함수이고 이와 비슷한 역할을 하는 명령어를 실행하면 된다.
+	South.Draw(SouthTurn);//내턴에 나는 카드를 뽑는다.
+	North.Draw(!SouthTurn);//내턴이 아니면 상대는 카드를 뽑는다.
+	Blanket.Draw();//담요한테도 한장 던져준다.
+	Deck.Draw(false);//덱에서 한장 뽑는다.
+	SouthPae.Draw();//내패에서 한장 뽑는다.
+	NorthPae.Draw();//상대는 상대 패에서 한장 뽑는다.
 }
 
 void OutPrompt(const char* Mes, int Wait/*=0*/)
 {
-	gotoxy(5, 23);
-	for (int i = 5; i < 79; i++) { cout << ' '; }
-	gotoxy(5, 23);
-	cout << Mes;
-	delay(Wait);
+	gotoxy(5, 23);//5,23 콘솔 좌표로 이동한다.
+	for (int i = 5; i < 79; i++) { cout << ' '; }//빈칸이다. 이것은 화면구성을 위한 것이다.
+	gotoxy(5, 23);//다시 해당 콘솔 좌표로 이동한다.
+	cout << Mes;//MES를 출력한다.
+	delay(Wait);//약간의 딜레이를 주면서 화면을 구성하는 함수이다.
 }
 
-int InputInt(const char* Mes, int start, int end)
+int InputInt(const char* Mes, int start, int end)//사용자가 숫자를 입력하면 자신이 보유한 화투패를 담요에 던지는 것이다.
 {
 	int ch;
 
-	OutPrompt(Mes);
-	for (;;) {
-		ch = tolower(_getch());
-		if (ch == 0xE0 || ch == 0) {
-			ch = _getch();
+	OutPrompt(Mes);//예외처리
+	for (;;) {//영원히 돌려준다.
+		ch = tolower(_getch());//키보드로 받아온 값을 모두 소문자로 내려준다.
+		if (ch == 0xE0 || ch == 0) {//0xE0은 Hexa값으로 16진수를 의미한다. 10진수로는 224이다. 즉 마지막부터 초기값이라면 ch가 
+			ch = _getch();//키보드에서 값을 받아온 것을 ch에 대입한다.
 			continue;
 		}
-		if (!(isdigit(ch) || ch == 'a')) continue;
-		if (ch == 'a') ch = 10; else ch = ch - '0';
-		if (ch >= start && ch <= end) {
-			return ch;
+		if (!(isdigit(ch) || ch == 'a')) continue;//isdigit은 문자가 숫자임을 확인하는 함수이다. 만약 a값이거나 ch 값이 키보드 값이 아니라면 해당 반복문 횟수를 점프해서 반복문을 돌린다.
+		if (ch == 'a') ch = 10; else ch = ch - '0';//a라면 ch 값에 10을 저장한다. 아니라면 ch 값에서 0문자를 빼준다.
+		if (ch >= start && ch <= end) {//타이핑한 값이 중간이라면 
+			return ch;//ch를 반환한다.
 		}
-		OutPrompt("무효한 번호입니다. 지정한 범위에 맞게 다시 입력해 주세요.");
+		OutPrompt("무효한 번호입니다. 지정한 범위에 맞게 다시 입력해 주세요.");//예외처리사항
 	}
 }
 
