@@ -10,7 +10,7 @@ using namespace std;// 표준 네임스페이스 추가
 // 전역변수 설정
 const int MaxCard = 48; // 최대값 카드를 상수화해줌 -->48이다.
 const int CardGap = 4;// 카드의 각 차이는 4이다. 
-const int Speed = 1000;//속도는 1000이다.
+const int Speed = 1000;//속도는 1000이다. 1000ms이므로 1초를 나타낸다.
 const int PromptSpeed = 2000;//장려되는 속도는 1000이다.
 
 // 화투 한장을 표현하는 클래스
@@ -187,7 +187,7 @@ public:
 			cout << '[' << n << ']';
 		}
 	}
-	void DrawTempCard(int idx, SCard C) {
+	void DrawTempCard(int idx, SCard C) {//유저가 뽑고나서 덱의 잔여카드를 나타낸다.
 		gotoxy(sx + idx * CardGap, sy + 1);
 		cout << C;
 	}
@@ -282,9 +282,9 @@ bool SouthTurn;//내 턴은 참이다.
 // 프로그램을 총지휘하는 main 함수
 void main()
 {
-	int i, ch;
+	int i, ch;//i는 반복제어변수 ch는 choice 즉 내가 던지거나 먹을 화투패를 택하는 것이다.
 	int arSame[4], SameNum;
-	char Mes[256];
+	char Mes[256];//상황지시문
 	CPlayer* Turn;//플레이어의 턴을 나타내는 생성자
 	CPlayerPae* TurnPae, * OtherPae;//내 턴의 패와 다른 사람 턴의 패
 	int UserIdx, UserSel, DeckSel;//?
@@ -296,65 +296,65 @@ void main()
 	randomize();//랜덤함수
 	Initialize();//초기화
 	for (SouthTurn = true; !Deck.IsEmpty(); SouthTurn = !SouthTurn) {//나의 턴이고, 덱이 비어있지 않으면 내턴이 끝날때까지 아래 실행문을 하는 것이다.
-		DrawScreen();
-		if (SouthTurn) {
-			Turn = &South;
-			TurnPae = &SouthPae;
-			OtherPae = &NorthPae;
+		DrawScreen();//초기 뽑는 화면을 띄운다.
+		if (SouthTurn) {//내턴이다.
+			Turn = &South;//턴은 나의 턴이다.
+			TurnPae = &SouthPae;//내턴에 나의 패를 가지고 있다.
+			OtherPae = &NorthPae;//내턴에 상대는 상대의 패를 가지고 있다.
 		}
-		else {
-			Turn = &North;
-			TurnPae = &NorthPae;
-			OtherPae = &SouthPae;
+		else {//상대턴이다.
+			Turn = &North;//턴은 상대턴이다.
+			TurnPae = &NorthPae;//상대턴에 상대는 상대의 패를 가지고 있다.
+			OtherPae = &SouthPae;//상대턴에 나는 나의 패를 가지고 있다.
 		}
-
+		//sprintf 함수해석: 턴에 카드 값을 받아서 2번인자 구절의 변환문자에 대입하고 MES에 배열에 대입한다.
 		sprintf(Mes, "내고 싶은 화투를 선택하세요(1~%d,0:종료) ", Turn->GetNum());
-		ch = InputInt(Mes, 0, Turn->GetNum());
-		if (ch == 0) {
-			if (InputInt("정말 끝낼겁니까?(0:예,1:아니오)", 0, 1) == 0)
+		ch = InputInt(Mes, 0, Turn->GetNum());//상황지시문이 나온다. 그리고 0을 누르면 종료고 내 턴에 상황에 해당하는 숫자를 선택할 수 있다.
+		if (ch == 0) {//만약 0번 키보드를 선택했다면 
+			if (InputInt("정말 끝낼겁니까?(0:예,1:아니오)", 0, 1) == 0)//다시 선택할 수 있는 기회다. 0을 누르면 선택 종료고 아니면 다시 내가 생각할 거다.
 				return;
 			else
 				continue;
 		}
 
 		// 플레이어가 카드를 한장 낸다.
-		UserTriple = DeckTriple = false;
-		UserIdx = ch - 1;
-		UserCard = Turn->GetCard(UserIdx);
-		SameNum = Blanket.FindSameCard(UserCard, arSame);
-		switch (SameNum) {
+		UserTriple = DeckTriple = false;//논리값을 모두 거짓으로 초기화한다.
+		UserIdx = ch - 1;//User인덱스는 선택 숫자에서 1만큼 감해준다.
+		UserCard = Turn->GetCard(UserIdx);//User카드는 턴에서 카드를 받아와서 User의 인덱스를 실인수로 받고 카드의 정보를 가져오는 것이다.
+		SameNum = Blanket.FindSameCard(UserCard, arSame);//같은 숫자라면 담요에서 같은 카드를 찾는다. 즉 내가 먹을 카드를 담요에서 찾는 것이다.
+		switch (SameNum) {//담요에서 먹을 카드를 찾으면 선택하는 것.
 		case 0:
-			UserSel = -1;
-			Blanket.InsertCard(Turn->RemoveCard(UserIdx));
-			DrawScreen();
+			UserSel = -1;//유저가 선택한 카드인덱스에 -1을 선택한다.
+			Blanket.InsertCard(Turn->RemoveCard(UserIdx));//담요에서 카드를 빼주고 화면에 출력한다.
+			DrawScreen();//화면 출력
 			break;
 		case 1:
-			UserSel = arSame[0];
+			UserSel = arSame[0];//같은 값을 지닌 배열값의 초기배열요소를 유저가 선택한 카드 인덱스에 대입한다.
 			break;
 		case 2:
-			if (Blanket.GetCard(arSame[0]) == Blanket.GetCard(arSame[1])) {
-				UserSel = arSame[0];
+			if (Blanket.GetCard(arSame[0]) == Blanket.GetCard(arSame[1])) {//담요의 카드가 담요의 카드가 같으면 즉, 덱에서 뽑은 게 담요꺼랑 같으면!
+				UserSel = arSame[0];//유저가 선택한 카드인덱스에 카드인덱스가 같은 배열의 배열요소 첫번쨰 항을 대입한다.
 			}
 			else {
-				Blanket.DrawSelNum(arSame);
-				sprintf(Mes, "어떤 카드를 선택하시겠습니까?(1~%d)", SameNum);
-				UserSel = arSame[InputInt(Mes, 1, SameNum) - 1];
+				Blanket.DrawSelNum(arSame);//담요에서 같은 카드가 뜨면 
+				sprintf(Mes, "어떤 카드를 선택하시겠습니까?(1~%d)", SameNum);//먹을 카드를 선택하는 것이다.
+				UserSel = arSame[InputInt(Mes, 1, SameNum) - 1];//유저가 선택할 기회를 준다.
 			}
 			break;
 		case 3:
-			UserSel = arSame[1];
-			UserTriple = true;
+			UserSel = arSame[1];//유저가 선택한 카드 인덱스에 같은 값을 지닌 배열의 두번째 요소에 넣는다.
+			UserTriple = true;//같은 게 3개면 설사다
 			break;
 		}
-		if (UserSel != -1) {
-			Blanket.DrawTempCard(UserSel, UserCard);
+		if (UserSel != -1) {//만약 유저가 선택한 카드인덱스가 -1이 아니라면 
+			Blanket.DrawTempCard(UserSel, UserCard);//담요에 유저가 선택한 인덱스의 카드가 던져지도록 출력한다.
 		}
-		delay(Speed);
+		delay(Speed);//1초 동안 이뤄지는 과정이다.
 
 		// 데크에서 한장을 뒤집는다.
-		Deck.Draw(true);
-		delay(Speed);
-		DeckCard = Deck.Pop();
+		Deck.Draw(true);//데크에서 한장 뽑는다.
+		delay(Speed);//1초 딜레이를 준다.
+		DeckCard = Deck.Pop();//스택자료구조다. 데크에서 한장이 뽑힌 값을 DeckCard에 대입한다.
 		SameNum = Blanket.FindSameCard(DeckCard, arSame);
 		switch (SameNum) {
 		case 0:
