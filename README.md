@@ -8,11 +8,11 @@ C++ sutdy
 기본적인 전처리 지시자
 --------------
 * <stdio.h> : C언어의 표준 입력
-* <iostream> : C++의 표준입력
-* <string.h> : C언어의 문자 전용
-* <stdlib.h> : C언의의 동적 할당 라이브러리
-* <vector> : 배열을 모두 이걸로 해라(short coding)-->방향성을 정할 수 있다.
-* <algorithm> : 알고리즘 구현할 필요가 없다. 좋은 거 사용하고 빠르게 해라.
+* <iostream> : C++의 표준입력<br>
+* <string.h> : C언어의 문자 전용<br>
+* <stdlib.h> : C언의의 동적 할당 라이브러리<br>
+* <vector> : 배열을 모두 이걸로 해라(short coding)-->방향성을 정할 수 있다.<br>
+* <algorithm> : 알고리즘 구현할 필요가 없다. 좋은 거 사용하고 빠르게 해라.<br>
   
 ## 목차 <br>
 1. C++?
