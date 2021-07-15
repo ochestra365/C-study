@@ -525,4 +525,4 @@ int InputInt(const char* Mes, int start, int end)//사용자가 숫자를 입력하면 자신
 		OutPrompt("무효한 번호입니다. 지정한 범위에 맞게 다시 입력해 주세요.");//예외처리사항
 	}
 }
-
+

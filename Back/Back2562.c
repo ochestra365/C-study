@@ -1,4 +1,4 @@
-//#define _CRT_SECURE_NO_WARNINGS
+//#define _crt_secure_no_warnings
 //#include <stdio.h>
 //#include <string.h>
 //#include <stdlib.h>
